@@ -10,7 +10,13 @@
 <?php
     include("../conexion/conexion.php");
     
-    $insert1="INSERT INTO `categoria` (`idcategoria`, `nombre`) VALUES (1, 'ejemplo');";
+    $insert1="INSERT INTO `categoria` (`idcategoria`, `nombre`) VALUES 
+    (1, 'Smartphones'),
+    (2, 'Hardware'),
+    (3, 'Software'),
+    (4, 'Tablets'),
+    (5, 'Consolas'),
+    (9, 'televisores');";
         
     $result = $connection->query($insert1);
         if (!$result) {
@@ -18,7 +24,7 @@
         var_dump($insert1);
     }
 
-        header("Refresh:0; url=index.php");
+        header("Refresh:0; url=../index.php");
 ?>
 
     </body>

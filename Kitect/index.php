@@ -2,7 +2,23 @@
 <html lang="en">
     <?php
     session_start();
+    
+    $conexion = 'conexion/conexion.php';
+
+    if (file_exists($conexion)) {
+        include('conexion/conexion.php');
+        unlink('instalador/datosejemplo.php');
+        unlink('instalador/index.php');
+        unlink('instalador/ventana2.php');
+        unlink('instalador/ventana3.php');
+        unlink('instalador/ventana4.php');
+        unlink('instalador/ventana5.php');
+        rmdir('instalador');
+    } else {
+        header('Location: instalador/index.php');
+    }
     ?>
+    
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -106,11 +122,7 @@
         </div><!-- /ww -->
 
 
-        <!-- +++++ Projects Section +++++ -->
-
-        <div class="container pt">
-
-        </div><!-- /container -->
+        
 
 
         <!-- +++++ Footer Section +++++ -->

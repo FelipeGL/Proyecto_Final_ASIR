@@ -2,6 +2,7 @@
 <html lang="en">
     <?php
     session_start();
+    include("../conexion/conexion.php");
     ?>
     <head>
         <meta charset="utf-8">
@@ -83,6 +84,7 @@
 
         <!-- +++++ Welcome Section +++++ -->
         <div id="ww">
+            
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 centered">

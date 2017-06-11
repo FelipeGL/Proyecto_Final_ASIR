@@ -2,8 +2,8 @@
 <?php
     if (isset($_SESSION["tipo"])){
                       $usuario=$_SESSION["us"];
-                  $cons= "select tema from usuarios where idusuario=$usuario";
-                  if ($result = $connection->query($cons)){
+                  $sql= "select tema from usuarios where idusuario=$usuario";
+                  if ($result = $connection->query($sql)){
           while($obj = $result->fetch_object()){
                echo'<link href="../assets/css/bootstrap.css" rel="stylesheet">';          
       echo'<link href="../assets/css/'.$obj->tema.'.css" rel="stylesheet">';
@@ -16,3 +16,4 @@
                                                          }
 
                                                    ?>
+

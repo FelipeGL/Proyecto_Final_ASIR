@@ -62,13 +62,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 centered">
-                        <p><b>¿DESEAS AÑADIR DATOS DE EJEMPLO?</b></p>
+                        <p><b>¿DESEAS AÑADIR DATOS?</b></p>
                     </div>
                     <div class="col-lg-8 col-lg-offset-2 centered">
-                        <input type="button" value="Deseo añadir datos de ejemplo" onClick="location.href='./datosejemplo.php'" /><br>
+                        <input type="button" value="Deseo añadir datos" onClick="location.href='./datosejemplo.php'" /><br>
+                        <p></p>
                     </div>
                     <div class="col-lg-8 col-lg-offset-2 centered">
-                        <input type="button" value="No deseo añadir datos de ejemplo" onClick="location.href='index.php'" />
+                        <input type="button" value="No deseo añadir datos" onClick="location.href='index.php'" />
                     </div>
                 </div>
                 <!-- /row -->

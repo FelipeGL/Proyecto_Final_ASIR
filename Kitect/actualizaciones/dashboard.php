@@ -56,6 +56,10 @@ include("../conexion/conexion.php");
     </script>
   </head>
   <body>
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
+            <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 centered">
+                <div id="piechart" style="width: 900px; height: 500px;"></div>
+            </div>
+      </div>
   </body>
 </html>

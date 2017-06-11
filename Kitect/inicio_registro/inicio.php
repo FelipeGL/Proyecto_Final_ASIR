@@ -60,6 +60,7 @@ session_start();
                     $_SESSION["nick"]=$_POST["nick"];
                     $obj=$result->fetch_object();
                     $_SESSION["tipo"]=  $obj->tipo;
+                    $_SESSION["us"]= $obj->idusuario;
 
                     header("location: ../index.php");
                 }

@@ -17,12 +17,10 @@
 
         <title>Kitect.com</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="../assets/css/bootstrap.css" rel="stylesheet">
-
-
-        <!-- Custom styles for this template -->
-        <link href="../assets/css/main.css" rel="stylesheet">
+      <?php
+        include("../conexion/conexion.php");
+        include_once("../temas/escogertema.php");
+        ?>
 
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="../assets/js/hover.zoom.js"></script>
@@ -36,6 +34,7 @@
     </head>
 
     <body>
+          
 
         <!-- Static navbar -->
         <div class="navbar navbar-inverse navbar-static-top">
@@ -58,6 +57,41 @@
 
         <!-- +++++ Welcome Section +++++ -->
         <div id="ww">
+            
+              <?php
+            echo'<div class="container">';
+            echo'<div class="row">';
+            echo'<div class="col-lg-8 col-lg-offset-2 centered">';
+            
+            echo '<form method="post" name="tema" id="sel">';
+            
+                echo'<h3>Selecctor de tema</h3>';
+                echo '<select name="b" id="tema">
+                        <option>main</option>
+                        <option>verde</option>
+                        <option>amarillo</option>
+                      </select>';
+            
+            echo'<button type="submit" name="tema">Cambiar tema</button>';
+            
+            if (isset($_POST["tema"])){
+       
+               $tem= $_POST["b"];
+               $usuario=$_SESSION["nick"];
+               $sqltema= "update usuarios set tema='$tem' where nick='$usuario'";
+                                                   $result= $connection->query($sqltema);
+                                                     if (!$result) {
+                                                        echo "error";
+                                                     } else {
+                                                       header('Location:usuario.php');
+                                                      }
+                                                      
+                                        
+            }
+            echo'</div>';
+            echo'</div>';
+            echo'</div>';
+            ?>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 centered">

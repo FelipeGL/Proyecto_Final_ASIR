@@ -71,7 +71,7 @@
                             <span>Apellidos admin</span><input type="text" name="apellidos"/><p></p>
                             <span>Correo electrónico admin</span><input type="email" name="email" value="@kitect.com"/><p></p>
                             <span>Contraseña admin</span><input type="password" name="pass"/><p></p>
-                            <button type="submit" class="btn btn-default col-md-4 col-md-offset-9">Siguiente</button>
+                            <button type="submit">Siguiente</button>
                         </form>
                     </div>
                 </div>

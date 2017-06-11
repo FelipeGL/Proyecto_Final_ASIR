@@ -5,7 +5,10 @@
     if ($_SESSION["tipo"]!=='admin'){
         session_destroy();
         header("Location: error.php");
+
     }
+                    require("../conexion/conexion.php");
+
     ?>
     <head>
         <meta charset="utf-8">
@@ -18,12 +21,9 @@
         <title>Kitect.com</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="../assets/css/bootstrap.css" rel="stylesheet">
-
-
-        <!-- Custom styles for this template -->
-        <link href="../assets/css/main.css" rel="stylesheet">
-
+        <?php
+        include_once("../temas/escogertema.php"); 
+        ?>
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="../assets/js/hover.zoom.js"></script>
         <script src="../assets/js/hover.zoom.conf.js"></script>
@@ -58,7 +58,43 @@
 
         <!-- +++++ Welcome Section +++++ -->
         <div id="ww">
-
+           
+            <?php
+            echo'<div class="container">';
+            echo'<div class="row">';
+            echo'<div class="col-lg-8 col-lg-offset-2 centered">';
+            
+            echo '<form method="post" name="tema" id="sel">';
+            
+                echo'<h3>Selector de tema</h3>';
+                echo '<select name="b" id="tema">
+                        <option>main</option>
+                        <option>verde</option>
+                        <option>amarillo</option>
+                      </select>';
+            
+            echo'<button type="submit" name="tema">Cambiar tema</button>';
+            
+            if (isset($_POST["tema"])){
+       
+               $tem= $_POST["b"];
+               $usuario=$_SESSION["nick"];
+               $sqltema= "update usuarios set tema='$tem' where nick='$usuario'";
+                                                   $result= $connection->query($sqltema);
+                                                     if (!$result) {
+                                                        echo "error";
+                                                     } else {
+                                                       header('Location:admin.php');
+                                                      }
+                                                      
+                                        
+            }
+            echo'</div>';
+            echo'</div>';
+            echo'</div>';
+            ?>
+            
+            
             <?php
             echo'<div class="container">';
             echo'<div class="row">';
@@ -96,12 +132,13 @@
                                                </a></td>";
                     echo "</tr>";
                 }
-                $result->close();
-                unset($obj);
-                unset($connection);
+               
             }
-            echo"</table>";
 
+            echo"</table>";
+            
+            echo '<a href=../tablapdf.php><img src="../iconos/impresora.png" style="width:45px;height:45px"></a>';
+            
             echo'</div>';
             echo'</div>';
             echo'</div>';
@@ -145,14 +182,12 @@
                                                      <img src='../iconos/delete.png' width='20%';/>
                                                    </a></td>";
                     echo "<td>
-                                                   <a href='updatenoticia.php?id=$obj->idnoticia'>
+                                                   <a href='../delete_update/updatenoticia.php?id=$obj->idnoticia'>
                                                    <img src='../iconos/update.png' width='20%';/>
                                                  </a></td>";
                     echo "</tr>";
                 }
-                $result->close();
-                unset($obj);
-                unset($connection);
+              
             }
             echo"</table>";
 
@@ -192,9 +227,7 @@
                                                </a></td>";
                     echo "</tr>";
                 }
-                $result->close();
-                unset($obj);
-                unset($connection);
+               
             }
             echo"</table>";
 
@@ -210,8 +243,7 @@
             echo'<div class="row">';
             echo'<div class="col-lg-8 col-lg-offset-2 centered">';
 
-            include("../conexion/conexion.php");
-
+   
 
             if ($connection->connect_errno) {
                 printf("Connection failed: %s\n", $connection->connect_error);
@@ -256,7 +288,7 @@
                 <p></p>
                 <p></p>
                 <a href="../noticias/insertnoticia.php"><input type="button" value="Añadir nueva noticia"/></a>
-                <a href="../categoria/nuevacategoria.php"><input type="button" value="Añadir nueva categoría"></a>
+                <a href="../categoria/nuevacategoria.php"><input type="button" value="Añadir categoría"></a>
             </div>
         </div><!-- /ww -->
 

@@ -2,6 +2,7 @@
 <html lang="en">
     <?php
     session_start();
+    include("../conexion/conexion.php");
     ?>
     <head>
         <meta charset="utf-8">
@@ -83,6 +84,7 @@
 
         <!-- +++++ Welcome Section +++++ -->
         <div class="container pt">
+            
             <div class="row mt">
                 <div class="col-lg-6 col-lg-offset-3 centered">
                     <h3>Categorias</h3>
