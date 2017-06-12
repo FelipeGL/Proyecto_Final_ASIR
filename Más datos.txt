@@ -1,0 +1,12 @@
+URL web Hosting: kitectcom.000webhostapp.com
+
+Usuario admin de la web
+nick: felipe
+pass: 2asirtriana
+
+Usuario común de la web
+nick: sergio
+pass: 2asirtriana
+
+
+URL repositorio GitHub: https://github.com/FelipeGL/Proyecto_Final_ASIR
